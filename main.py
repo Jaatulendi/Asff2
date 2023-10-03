@@ -24,7 +24,7 @@ import re
 import os
 
 bot = Client("bot",
-             bot_token= "6298462519:AAH9BpWgeEbYiqgxnVoQK5gPt_vyrcSVP94",
+             bot_token= "6134747255:AAFnOrKgIGlQ4lORCmonc6sE_aYm8ASmsJY",
              api_id= 20088962,
              api_hash= "257f47d347157555890a64b12bc0134f")
 
@@ -198,7 +198,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    prog = await m.reply_text(f"**Downloading:-**\n\n** Video Name :-** `{name}\nQuality - {raw_text2}`\n**link:**`{url}`\n\n **bot made by ADR**")
+                    prog = await m.reply_text(f"**Downloading:-**\n\n** Video Name :-** `{name}\nQuality - {raw_text2}`\n**link:**`{url}`\n\n **bot made by 🌹🌹🌹**")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
