@@ -49,7 +49,7 @@ async def account_login(bot: Client, m: Message):
         await bot.send_document(-1001851582041, x)
         await input.delete(True)
         file_name, ext = os.path.splitext(os.path.basename(x))
-        credit = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
+        credit = 'Shankar'
 
 
         path = f"./downloads/{m.chat.id}"
