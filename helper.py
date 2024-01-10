@@ -85,7 +85,7 @@ async def download_video(url, cmd, name):
     k = subprocess.run(download_cmd, shell=True)
     if "visionias" in cmd and k.returncode != 0 and failed_counter <= 10:
         failed_counter += 1
-        await asyncio.sleep(5)
+        await asyncio.sleep(2)
         await download_video(url, cmd, name)
     failed_counter = 0
     try:
@@ -130,7 +130,7 @@ async def send_vid(bot: Client, m: Message, cc, filename, thumb, name, prog):
         copy = await bot.send_video(chat_id=m.chat.id,video=filename,caption=cc, supports_streaming=True,height=720,width=1280,thumb=thumbnail,duration=dur, progress=progress_bar,progress_args=(reply,start_time))
         await copy.copy(chat_id = LOG) 
     except TimeoutError:
-        await asyncio.sleep(5) 
+        await asyncio.sleep(2) 
         copy = await bot.send_video(chat_id=m.chat.id,video=filename,caption=cc, supports_streaming=True,height=720,width=1280,thumb=thumbnail,duration=dur, progress=progress_bar,progress_args=(reply,start_time))
         await copy.copy(chat_id = LOG)       
     except Exception:
