@@ -107,7 +107,7 @@ async def download_video(url, cmd, name):
 
 
 
-async def send_vid(bot: Client, m: Message, cc, filename, thumb, name):
+async def send_vid(bot: Client, m: Message, cc, filename, thumb, name, prog):
 
     subprocess.run(
         f'ffmpeg -i "{filename}" -ss 00:01:00 -vframes 1 "{filename}.jpg"',
