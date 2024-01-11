@@ -169,12 +169,12 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
             else:
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
-
-            try: 
-                for count in range(retry_count):
+          
+            try:                
                 cc = f'**[🎬] Vid_ID : {str(count).zfill(3)}**\n**Title : ** {name1}\n**Batch Name :** {b_name}\n\n**Downloaded by : {CR}**'
                 cc1 = f'**[📕] Pdf_ID : {str(count).zfill(3)}**\n**Title : ** {name1}\n**Batch Name :**{b_name}\n\n**Downloaded by : {CR}**'
                 if "drive" in url:
+                    for count in range(retry_count):
                     try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
