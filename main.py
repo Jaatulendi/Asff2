@@ -174,8 +174,11 @@ async def account_login(bot: Client, m: Message):
                 cc = f'**[🎬] Vid_ID : {str(count).zfill(3)}**\n**Title : ** {name1}\n**Batch Name :** {b_name}\n\n**Downloaded by : {CR}**'
                 cc1 = f'**[📕] Pdf_ID : {str(count).zfill(3)}**\n**Title : ** {name1}\n**Batch Name :**{b_name}\n\n**Downloaded by : {CR}**'
                 if "drive" in url:
-                    for count in range(retry_count):
-                    try:
+                     for count in range(retry_count):
+                         try:
+                             # Your code logic here
+                         except Exception as e:
+                                  # Your error handling logic here
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
                         await copy.copy(chat_id = -1001851582041)
